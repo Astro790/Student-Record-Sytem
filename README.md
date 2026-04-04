@@ -9,5 +9,7 @@ Features:-
  - Update the score of a student in a course and the program then uses the new score to recalculate Student grade,CGPA and other related data
  - Using try and except to catch mistakes if made by the users and displays the error
  - with the addition of while true we make sure the user is able to enter an input again and stop the program from crashing
- How to run:-
+
+
+How to run:-
  -python "student_record_system.py"
