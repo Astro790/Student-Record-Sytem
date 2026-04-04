@@ -1,0 +1,101 @@
+[
+   {
+      "name": "Ryan ",
+      "courses": [
+         {
+            "course": "Pop",
+            "score": 56.0,
+            "units": 91,
+            "grade": "C",
+            "course point": 273,
+            "status": "PASSED"
+         },
+         {
+            "course": "Mfio",
+            "score": 95.0,
+            "units": 3,
+            "grade": "A",
+            "course point": 15,
+            "status": "PASSED"
+         },
+         {
+            "course": "Rtop",
+            "score": 67.0,
+            "units": 3,
+            "grade": "B",
+            "course point": 12,
+            "status": "PASSED"
+         }
+      ],
+      "GPA": 3.09,
+      "AVERAGE SCORE": 72.66666666666667,
+      "NUMBER OF PASSED COURSE": 3,
+      "NUMBER OF FAILED COURSE": 0
+   },
+   {
+      "name": "Lolade",
+      "courses": [
+         {
+            "course": "Wew",
+            "score": 55,
+            "units": 3,
+            "grade": "C",
+            "course point": 9,
+            "status": "PASSED"
+         },
+         {
+            "course": "Iop",
+            "score": 56.0,
+            "units": 5,
+            "grade": "C",
+            "course point": 15,
+            "status": "PASSED"
+         }
+      ],
+      "GPA": 3.0,
+      "AVERAGE SCORE": 55.5,
+      "NUMBER OF PASSED COURSE": 2,
+      "NUMBER OF FAILED COURSE": 0
+   },
+   {
+      "name": "Astro",
+      "courses": [
+         {
+            "course": "Mathematics",
+            "score": 87.0,
+            "units": 2,
+            "grade": "A",
+            "course point": 10,
+            "status": "PASSED"
+         },
+         {
+            "course": "Python",
+            "score": 99.0,
+            "units": 3,
+            "grade": "A",
+            "course point": 15,
+            "status": "PASSED"
+         },
+         {
+            "course": "Yoruba",
+            "score": 23.0,
+            "units": 2,
+            "grade": "F",
+            "course point": 0,
+            "status": "FAILED"
+         },
+         {
+            "course": "French",
+            "score": 54.0,
+            "units": 2,
+            "grade": "C",
+            "course point": 6,
+            "status": "PASSED"
+         }
+      ],
+      "GPA": 3.44,
+      "AVERAGE SCORE": 65.75,
+      "NUMBER OF PASSED COURSE": 3,
+      "NUMBER OF FAILED COURSE": 1
+   }
+]
