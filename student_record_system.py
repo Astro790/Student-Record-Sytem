@@ -119,8 +119,9 @@ class Student:
                 self.filefound= True
 
         except FileNotFoundError:
-            print("FILE DOES NOT EXIST")
-            self.filefound = False
+            if message:
+                print("FILE DOES NOT EXIST")
+                self.filefound = False
         self.temporary_db = temporary_db
         if len(self.temporary_db) == 0:
              if message:
@@ -133,14 +134,13 @@ class Student:
     def AddStudent(self):
         '''This function is responsible for adding students to the JSON file'''
         self.load(message=False)
-        available = False
+        available = True
         self.name = input("Enter student name: ")
         if self.filefound:
             for student in  self.temporary_db:
                 if self.name.strip().lower() == student['name'].strip().lower():
                     print("Student already exist")
-                else:
-                    available = True
+                    available = False
         if available:
            self.getDetails()
            self.Calculategpa()
