@@ -1,10 +1,50 @@
 import json
-class Student:
+class database:
     def __init__(self):
+        self.student_db = {}
+        self.temporary_db = []   
+        
+        
+    def save(self):
+        '''This function creates a JSON file if it doesnt exist and saves al the data in the list 
+        to the JSON file so that even after the proram closes it can stil be accessed when the program
+        starts again'''
+        try:
+            with open('Student_database.JSON','r') as database_file:
+                student_db = json.load(database_file)
+        except FileNotFoundError:
+            with open('Student_database.JSON', 'w') as database_file:
+                student_db = []
+        student_db.append(self.student_db)
+        with open('Student_database.JSON','w') as database_file:
+            json.dump(student_db,database_file,indent = 3)
+        
+
+    
+    def load(self,message):
+        '''This is the function that helps us load the JSON file into the program'''
+        temporary_db = []
+        try:
+            with open('Student_database.JSON', 'r') as database_file:
+                temporary_db = json.load(database_file)
+                self.filefound= True
+
+        except FileNotFoundError:
+            if message:
+                print("FILE DOES NOT EXIST")
+                self.filefound = False
+        self.temporary_db = temporary_db
+        if len(self.temporary_db) == 0:
+             if message:
+               print("NO STUDENT IN FILE")
+             self.filefound = False
+            
+    
+class Student(database):
+    def __init__(self):
+        super().__init__()
         self.name = ""
         self.no_of_courses = 0
-        self.student_db = {}
-        self.temporary_db = []
         self.filefound = None
 
         
@@ -84,7 +124,7 @@ class Student:
                 passed += 1
             elif status == "FAILED":
                 failed += 1
-        average = total_score/self.no_of_courses
+        average = round(total_score/self.no_of_courses,2)
         gpa = round(total_points/total_unit,2)
         student_data = {'GPA' : gpa,
                         'AVERAGE SCORE' : average, 
@@ -93,47 +133,12 @@ class Student:
                         }
         self.student_db.update(student_data)
 
-            
-    def save(self):
-        '''This function creates a JSON file if it doesnt exist and saves al the data in the list 
-        to the JSON file so that even after the proram closes it can stil be accessed when the program
-        starts again'''
-        try:
-            with open('Student_database.JSON','r') as database_file:
-                student_db = json.load(database_file)
-        except FileNotFoundError:
-            with open('Student_database.JSON', 'w') as database_file:
-                student_db = []
-        student_db.append(self.student_db)
-        with open('Student_database.JSON','w') as database_file:
-            json.dump(student_db,database_file,indent = 3)
         
 
-    
-    def load(self,message):
-        '''This is the function that helps us load the JSON file into the program'''
-        temporary_db = []
-        try:
-            with open('Student_database.JSON', 'r') as database_file:
-                temporary_db = json.load(database_file)
-                self.filefound= True
-
-        except FileNotFoundError:
-            if message:
-                print("FILE DOES NOT EXIST")
-                self.filefound = False
-        self.temporary_db = temporary_db
-        if len(self.temporary_db) == 0:
-             if message:
-               print("NO STUDENT IN FILE")
-             self.filefound = False
-            
-
-    
 
     def AddStudent(self):
         '''This function is responsible for adding students to the JSON file'''
-        self.load(message=False)
+        super().load(message=False)
         available = True
         self.name = input("Enter student name: ")
         if self.filefound:
@@ -144,13 +149,13 @@ class Student:
         if available:
            self.getDetails()
            self.Calculategpa()
-           self.save()
+           super().save()
 
     
     def DisplayStudent(self):
         '''This function loads students data from the JSON file  and display all the 
         student data stored in the JSON file'''
-        self.load(message=True)
+        super().load(message=True)
         if self.filefound:
           print("_"*30 + "STUDENT PERFOMANCE SUMMARY" + "_"*30)
           for student in self.temporary_db:
@@ -165,7 +170,7 @@ class Student:
         '''This function searches for student in the JSON file and brings out the information 
         of the student that was searched for'''
         student_found=False
-        self.load(message=True)
+        super().load(message=True)
         if self.filefound:
              name = input("Enter student name: ")
              for student in self.temporary_db:
@@ -175,7 +180,7 @@ class Student:
                     print(f"GPA: {student['GPA']}") 
                     courses = student['courses']
                     for course in courses:
-                       print(f"-------------{course['course'].upper()} detail----------------")
+                       print(f"-------------{course['course'].upper()}----------------")
                        print(f"{course['course'].upper()} UNIT: {course['units']}")
                        print(f"{course['course'].upper()} POINTS: {course['course point']}")
                        print(f"SCORE: {course['score']}")
@@ -188,8 +193,7 @@ class Student:
 
 
     def UpdateStudentScore(self):
-
-        self.load(message=True)
+        super().load(message=True)
         if self.filefound:
               student_found=course_found = False
               name = input("Enter the student you want to update there details: ")
@@ -251,7 +255,7 @@ class Student:
 
     def DeleteStudent(self):
         '''This program searches for students that we want to remove from the program'''
-        self.load(message=True)
+        super().load(message=True)
         if self.filefound:
              name =input("Enter the student name u want to remove: ")
              new_db = []

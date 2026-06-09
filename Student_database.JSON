@@ -3,8 +3,40 @@
       "name": "Onyejekwe Ryan",
       "courses": [
          {
-            "course": "Python ",
-            "score": 85.0,
+            "course": "Python",
+            "score": 82.0,
+            "units": 3,
+            "grade": "A",
+            "course point": 15,
+            "status": "PASSED"
+         },
+         {
+            "course": "Mathematics",
+            "score": 71.0,
+            "units": 2,
+            "grade": "B",
+            "course point": 8,
+            "status": "PASSED"
+         },
+         {
+            "course": "System Analysis And Design",
+            "score": 65.0,
+            "units": 3,
+            "grade": "B",
+            "course point": 12,
+            "status": "PASSED"
+         },
+         {
+            "course": "Web Development",
+            "score": 86.0,
+            "units": 3,
+            "grade": "A",
+            "course point": 15,
+            "status": "PASSED"
+         },
+         {
+            "course": "Operation Research",
+            "score": 86.0,
             "units": 3,
             "grade": "A",
             "course point": 15,
@@ -13,40 +45,88 @@
          {
             "course": "French",
             "score": 52.0,
-            "units": 2,
+            "units": 1,
             "grade": "C",
-            "course point": 6,
+            "course point": 3,
+            "status": "PASSED"
+         },
+         {
+            "course": "Agric",
+            "score": 12.0,
+            "units": 1,
+            "grade": "F",
+            "course point": 0,
+            "status": "FAILED"
+         },
+         {
+            "course": "Cybersecurity",
+            "score": 90.0,
+            "units": 2,
+            "grade": "A",
+            "course point": 10,
+            "status": "PASSED"
+         },
+         {
+            "course": "Computer Architecture",
+            "score": 81.0,
+            "units": 2,
+            "grade": "A",
+            "course point": 10,
             "status": "PASSED"
          }
       ],
-      "GPA": 4.2,
-      "AVERAGE SCORE": 68.5,
-      "NUMBER OF PASSED COURSE": 2,
-      "NUMBER OF FAILED COURSE": 0
+      "GPA": 4.4,
+      "AVERAGE SCORE": 69.44,
+      "NUMBER OF PASSED COURSE": 8,
+      "NUMBER OF FAILED COURSE": 1
    },
    {
-      "name": "Angel",
+      "name": "David James",
       "courses": [
          {
+            "course": "Mathematics",
+            "score": 25.0,
+            "units": 2,
+            "grade": "F",
+            "course point": 0,
+            "status": "FAILED"
+         },
+         {
+            "course": "Operation Research",
+            "score": 58.0,
+            "units": 3,
+            "grade": "C",
+            "course point": 9,
+            "status": "PASSED"
+         },
+         {
+            "course": "System Analysis And Design",
+            "score": 80.0,
+            "units": 3,
+            "grade": "A",
+            "course point": 15,
+            "status": "PASSED"
+         },
+         {
             "course": "Python",
-            "score": 62.0,
+            "score": 46.0,
+            "units": 3,
+            "grade": "D",
+            "course point": 6,
+            "status": "FAILED"
+         },
+         {
+            "course": "Web Development",
+            "score": 63.0,
             "units": 3,
             "grade": "B",
             "course point": 12,
             "status": "PASSED"
-         },
-         {
-            "course": "French",
-            "score": 45.0,
-            "units": 2,
-            "grade": "D",
-            "course point": 4,
-            "status": "FAILED"
          }
       ],
-      "GPA": 3.2,
-      "AVERAGE SCORE": 53.5,
-      "NUMBER OF PASSED COURSE": 1,
-      "NUMBER OF FAILED COURSE": 1
+      "GPA": 3.0,
+      "AVERAGE SCORE": 54.4,
+      "NUMBER OF PASSED COURSE": 3,
+      "NUMBER OF FAILED COURSE": 2
    }
 ]
