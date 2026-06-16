@@ -13,4 +13,3 @@ Features:-
 
 How to run:-
  -python "student_record_system.py"
- #preview
